@@ -15,7 +15,9 @@ let currentRoom = {
 // API's
 
 function renderConversations() {
-  fetch("https://whelp-backend.herokuapp.com/api/chat/users", { mode: "cors" })
+  fetch("https://whelp-backend.herokuapp.com/api/chat/users", {
+    mode: "no-cors",
+  })
     .then((data) => {
       return data.json();
     })
@@ -30,7 +32,7 @@ function renderConversations() {
 function findRoom(user, msg, tstmp, dot) {
   fetch(`https://whelp-backend.herokuapp.com/api/chat/is-room`, {
     method: "POST",
-    mode: "cors",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
@@ -55,7 +57,7 @@ function findRoom(user, msg, tstmp, dot) {
 function createChatBox(user) {
   fetch(`https://whelp-backend.herokuapp.com/api/chat/room`, {
     method: "POST",
-    mode: "cors",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
@@ -82,7 +84,7 @@ function createChatBox(user) {
 function beforeLoad(jwt, userId) {
   fetch("https://whelp-backend.herokuapp.com/api/auth/is-user", {
     method: "POST",
-    mode: "cors",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
@@ -120,7 +122,7 @@ beforeLoad(
 function logout() {
   fetch("https://whelp-backend.herokuapp.com/api/auth/logout", {
     method: "POST", // or 'PUT'
-    mode: "cors",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
@@ -295,7 +297,7 @@ const sendMessage = (msg) => {
   };
   fetch("https://whelp-backend.herokuapp.com/api/chat/message", {
     method: "POST",
-    mode: "cors",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
