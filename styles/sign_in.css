@@ -1,0 +1,358 @@
+.signIn {
+    height: 100vh;
+    max-width: 1600px;
+  }
+  .bodyCover {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .leftSide {
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9fafc;
+  }
+  .leftTop {
+    width: 100%;
+    display: flex;
+    flex-basis: 10%;
+    height: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5% 5rem;
+  }
+  .leftTop img{
+    width: 18rem;
+  }
+  
+  .leftDown {
+    flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .cover {
+    width: 430px;
+  }
+  .illustrate {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .illustrate img {
+    width: 45%;
+  }
+  .info div:nth-child(1) h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .info ul {
+    padding: 0.5rem 13% 0.5rem 15%;
+  }
+  .info ul li {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    word-spacing: 0.3rem;
+    margin: 2rem 0;
+  }
+  .info ul li span {
+    font-weight: bold;
+  }
+  .listCheckedItem {
+    position: relative;
+    display: block;
+    color: #677788;
+    padding-left: 1.75rem;
+    margin: 0.5rem;
+  }
+  .listCheckedItem::before {
+    position: absolute;
+    top: 0;
+    left: -3%;
+    width: 2rem;
+    height: 2rem;
+    background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 110 110' fill='%230874fc' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M98.1,16.2c-2.5-2.3-6.4-2.2-8.7,0.2L36.7,70.1l-13-15.5c-2.9-3.5-7.9-4.1-11.1-1.4c-2.9,2.4-3.5,6.6-1.4,10.1l16.5,28c3.2,5.4,10.8,5.8,14.5,0.8l56.5-67.3C100.7,22.1,100.4,18.5,98.1,16.2z'/%3E%3C/svg%3E%0A")
+      no-repeat right center/2rem 2rem;
+    content: "";
+    margin-top: 0.2rem;
+  }
+  .company {
+    display: flex;
+    justify-content: center;
+    margin: 3% 0;
+  }
+  .icon {
+    height: 3rem;
+    margin: 0 0.2rem;
+  }
+  .rightSide {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 420px;
+  }
+  .form h1 {
+    color: #1e2022;
+    font-size: 3rem;
+  }
+  .form p {
+    font-size: 1.4rem;
+    color: #677788;
+    margin: 1.5rem 0;
+  }
+  .form p > a {
+    color: var(--main-theme);
+    cursor: pointer;
+    position: relative;
+  }
+  .error_input{
+    position: relative;
+    border: 0.5px solid rgba(252, 8, 8, 0.5) !important;
+    box-shadow: 0 0 8px rgba(252, 8, 8, 0.3);
+  }
+  .error_input::placeholder{
+    color: rgb(252, 8, 8);
+  }
+  .form p > a::before,
+  .wrapper a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 0.1rem;
+    background: var(--main-theme);
+    transition: 0.3s;
+  }
+  .wrapper a::before {
+    bottom: 25%;
+  }
+  .form p > a:hover::before,
+  .wrapper a:hover::before {
+    width: 100%;
+  }
+  .btn {
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .btn button {
+    width: 100%;
+    height: 5.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #677788;
+    background-color: transparent;
+    border: 0.15rem solid #e7eaf3;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  .btn button:hover {
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
+  }
+  .btn button[btn-type="Sign in"] {
+    background: var(--main-theme);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.8rem;
+  }
+  .btn button[btn-type="Sign in"]:disabled{
+    background: var(--bg-color);
+    color: var(--text-grey);
+    pointer-events: none;
+  }
+  .btn button[btn-type="Sign in"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -25%;
+    height: 100%;
+    width: 15%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
+  }
+  .btn button[btn-type="Sign in"]:hover::before {
+    animation: move1 0.6s infinite linear;
+  }
+  @keyframes move1 {
+    from {
+      left: -25%;
+    }
+    to {
+      left: 125%;
+    }
+  }
+  .btn button > img {
+    width: 4%;
+    margin-right: 2%;
+  }
+  .divider {
+    font-size: 1.6rem;
+    position: relative;
+    color: #677788;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .divider::before,
+  .divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 0.15rem;
+    background-color: #e7eaf3;
+    transform: translateY(-50%);
+  }
+  .divider::before {
+    left: 0%;
+  }
+  .divider::after {
+    right: 0%;
+  }
+  .input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  .input label {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+  }
+  .wrapper a,
+  .checkbox label {
+    color: #677788;
+    cursor: pointer;
+  }
+  .wrapper a {
+    position: relative;
+  }
+  .wrapper a:hover {
+    color: var(--main-theme);
+  }
+  .input input {
+    border: 0.15rem solid #e7eaf3;
+    border-radius: 0.5rem;
+    height: 5.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.6rem;
+    transition: 0.3s;
+  }
+  .input input:focus {
+    border: 0.5px solid rgba(8, 116, 252, 0.5);
+    box-shadow: 0 0 8px rgba(8, 116, 252, 0.3);
+  }
+  .input[input-type="pass"] input {
+    padding-right: 4rem;
+  }
+  .input .pass {
+    position: absolute;
+    top: 60%;
+    right: 4%;
+  }
+  .input .pass i {
+    font-size: 1.5rem;
+    color: #677788;
+    cursor: pointer;
+  }
+  .input input:focus {
+    outline: none;
+  }
+  .checkbox {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    position: relative;
+  }
+  .checkbox label {
+    font-size: 1.4rem;
+    margin-left: 1rem;
+  }
+  .checkbox input[type="checkbox"] {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .checkbox span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.3rem;
+    border: 0.1rem solid var(--main-theme);
+    z-index: -1;
+  }
+  .checkbox input[type="checkbox"]:checked ~ span {
+    background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 110 110' fill='%230874fc' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M98.1,16.2c-2.5-2.3-6.4-2.2-8.7,0.2L36.7,70.1l-13-15.5c-2.9-3.5-7.9-4.1-11.1-1.4c-2.9,2.4-3.5,6.6-1.4,10.1l16.5,28c3.2,5.4,10.8,5.8,14.5,0.8l56.5-67.3C100.7,22.1,100.4,18.5,98.1,16.2z'/%3E%3C/svg%3E%0A")
+      no-repeat center center/1rem 1rem;
+    color: var(--main-theme);
+  }
+  
+  @media (max-height: 1400px) {
+    .leftTop {
+      flex-basis: 5%;
+    }
+    .logo {
+      height: 90%;
+    }
+  }
+  
+  @media (max-width: 990px) {
+    .bodyCover {
+      flex-direction: column;
+    }
+    .leftSide {
+      flex-basis: auto;
+      height: auto;
+      display: block;
+      background-color: white;
+      padding-top: 0.5rem;
+      flex-basis: 5%;
+    }
+    .leftDown {
+      display: none;
+    }
+    .rightSide {
+      flex-basis: 95%;
+    }
+  }
+  @media (max-width: 480px) {
+    .leftTop{
+      padding: 5% 3rem;
+      margin-top: 1%;
+    }
+    .form {
+      width: 90%;
+    }
+  }
+  

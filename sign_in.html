@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login || Whelp</title>
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/sign_in.css" />
+  </head>
+  <body>
+    <section class="signIn">
+      <div class="bodyCover">
+        <div class="leftSide">
+          <div class="leftTop">
+            <img src="./assets/logo.svg" />
+          </div>
+          <div class="leftDown">
+            <div class="cover">
+              <div class="illustrate">
+                <img src="./assets/chat_imp.svg" />
+              </div>
+              <div class="info">
+                <div>
+                  <h1>Happiness is a good chat</h1>
+                </div>
+                <ul>
+                  <li class="listCheckedItem">
+                    <span>Build Connections</span>
+                    <br />
+                    Build, run, and scale your apps - end to end
+                  </li>
+
+                  <li class="listCheckedItem">
+                    <span>Chat with favourite peoples</span>
+                    <br />
+                    It brings together your tasks, projects, timelines, files
+                    and more
+                  </li>
+                </ul>
+              </div>
+              <div class="company">
+                <div>
+                  <img
+                    class="icon"
+                    src="./assets/brands/gitlab-gray.svg"
+                    alt="Image Description"
+                  />
+                </div>
+                <div>
+                  <img
+                    class="icon"
+                    src="./assets/brands/fitbit-gray.svg"
+                    alt="Image Description"
+                  />
+                </div>
+                <div>
+                  <img
+                    class="icon"
+                    src="./assets/brands/flow-xo-gray.svg"
+                    alt="Image Description"
+                  />
+                </div>
+                <div>
+                  <img
+                    class="icon"
+                    src="./assets/brands/layar-gray.svg"
+                    alt="Image Description"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rightSide">
+          <div class="form">
+            <h1>Sign in</h1>
+            <p>
+              Don't have an account yet?
+              <a href="./sign_up.html">Sign up here</a>
+            </p>
+            <div class="btn">
+              <button>
+                <img src="./assets/brands/google.svg" />
+                Sign in with Google
+              </button>
+            </div>
+            <span class="divider">OR</span>
+            <div class="input">
+              <label htmlFor="Email">Your email</label>
+              <input
+                type="email"
+                name="Email"
+                placeholder="MarkWilliams@example.com"
+                id="login_email"
+              />
+            </div>
+            <div class="input" input-type="pass">
+              <div class="wrapper">
+                <label htmlFor="Password">Password</label>
+                <a>Forgot Password?</a>
+              </div>
+              <div class="pass">
+                <!-- {hide ? (
+                    <i
+                      class="far fa-eye-slash"
+                      onClick={() => {
+                        setHide(false);
+                      }}
+                    ></i>
+                  ) : (
+                    <i
+                      class="far fa-eye"
+                      onClick={() => {
+                        setHide(true);
+                      }}
+                    ></i>
+                  )} -->
+              </div>
+              <input
+                type="password"
+                name="Password"
+                placeholder="8+ characters required"
+                id="login_pass"
+              />
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" name="Remember" />
+              <span></span>
+              <label htmlFor="Remember">Remember me</label>
+            </div>
+            <div class="btn">
+              <button class="login_btn" btn-type="Sign in" onclick="login();">Sign in</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <script src="./js/login.js"></script>
+  </body>
+</html>

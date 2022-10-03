@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/e7a0c04ff2.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Whelp</title>
+  </head>
+  <body>
+    <main>
+      <div class="sideNav">
+        <div class="topsec">
+          <img src="./assets/dashboard.svg" alt="dashboard-icon" />
+        </div>
+        <div class="centersec">
+          <img src="./assets/home.svg" alt="home-icon" />
+          <img src="./assets/chat.svg" alt="chat-icon" />
+          <img src="./assets/people.svg" alt="people-icon" />
+          <img src="./assets/pie-white.svg" alt="pie-icon" />
+          <img src="./assets/circle.svg" alt="circle-icon" />
+          <img src="./assets/tv.svg" alt="tv-icon" />
+          <img src="./assets/graph.svg" alt="graph-icon" />
+        </div>
+      </div>
+
+      <section class="rightSide">
+        <nav class="nav">
+          <div class="logo">
+            <img src="./assets/logo.svg" alt="logo" />
+          </div>
+          <div class="right-box">
+            <div class="search">
+              <div class="icon">
+                <img src="./assets/search.svg" alt="search-icon" />
+              </div>
+              <p>Search here....</p>
+            </div>
+            <div class="notification">
+              <img src="./assets/bell.svg" alt="bell-icon" />
+            </div>
+            <div class="profile">
+              <div class="user">
+                <img src="./assets/user.jpg" alt="" />
+              </div>
+              <p></p>
+              <div class="icon">
+                <img src="./assets/angle-down.svg" alt="angle-down-icon" />
+              </div>
+              <div class="dropdown">
+                <div onclick="logout();">
+                  <i class="fas fa-solid fa-power-off"></i>Logout
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="chatSection">
+          <div class="conversations">
+            <h2>Conversations</h2>
+            <div class="searchChats">
+              <div class="icon">
+                <img src="./assets/search.svg" alt="search-icon" />
+              </div>
+              <p>Search here....</p>
+            </div>
+            <div class="recentNew">
+              <div>
+                <p>Recent Chats</p>
+                <img src="./assets/angle-down.svg" alt="angle-down-icon" />
+              </div>
+              <div>
+                <p>New Chats</p>
+                <img src="./assets/angle-down.svg" alt="angle-down-icon" />
+              </div>
+            </div>
+
+            <div class="members">
+              <!-- <div class="people">
+                           <div class="wrap">
+                            <div class="pic">
+                                <img src="./assets/user.jpg" alt="people">
+                            </div>
+                            <div class="name">
+                                <h3>Gerald Dean</h3>
+                                <div class="time">
+                                   
+                                    <span>6:50 pm</span>
+                                </div>
+                            </div>
+                           </div>
+                            <div class="dots">
+                                <div class="thrice"></div>
+                                <div class="single"></div>
+                                <span>10/2/2022 6:50 pm</span>
+                            </div>
+                        </div> -->
+            </div>
+          </div>
+
+          <div class="chatBox">
+            <div class="info">
+              <div class="left">
+                <i class="fas fa-solid fa-arrow-left" id="close"></i>
+                <div class="image">
+                  <img src="./assets/user.jpg" alt="user" />
+                </div>
+                <div class="status">
+                  <h3></h3>
+                  <span>Online</span>
+                </div>
+              </div>
+              <div class="right">
+                <div class="video">
+                  <img src="./assets/Video.svg" alt="video-icon" />
+                </div>
+                <div class="call">
+                  <img src="./assets/call.svg" alt="call-icon" />
+                </div>
+              </div>
+            </div>
+
+            <div class="chats">
+              <!-- <div class="rec_wrapper">
+                            <div class="person">
+                                <img src="./assets/user.jpg" alt="user_img">
+                            </div>
+                            <div class="rec_msg">
+                                <p>lorem ipsum dolor sit amet patipet worduna pilow jysudh sjdhjh aksbx asxnkaj jasb asbd </p>
+                            </div>
+                        </div>
+
+                        <div class="sent_wrapper">
+                            <div class="sent_msg">
+                                <p>lorem ipsum dolor sit amet patipet worduna pilow jysudh sjdhjh aksbx asxn
+                                    rem ipsum dolor sit amet patipet worduna pilow jysudh sjdhjh aksbx asxnkaj jasb asbd </p>
+                            </div>
+                            <div class="person">
+                                <img src="./assets/user.jpg" alt="user_img">
+                            </div>
+                        </div> -->
+            </div>
+
+            <div class="send">
+              <div class="plus"><i class="fas fa-solid fa-plus"></i></div>
+              <textarea
+                name="typeMsg"
+                id="msgInp"
+                cols="30"
+                placeholder="Type a message here"
+              ></textarea>
+              <div class="emojis">
+                <div class="emoji">
+                  <img src="./assets/smile.svg" alt="smile-icon" />
+                </div>
+                <div class="plane"><img src="./assets/send.svg" alt="" /></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="userInfo">
+            <div class="profileImg">
+              <i class="fas fa-solid fa-arrow-left" id="close2"></i>
+              <img src="./assets/user.jpg" alt="ProfileImg" />
+              <!-- <h1>Aris Christofi</h1>
+              <p>Admin</p> -->
+            </div>
+            <div class="personalInfo">
+              <h3>Personal Information</h3>
+              <div class="userDetails">
+                <img src="./assets/post.svg" alt="post-icon" />
+                <!-- <p>Support@whelp.net</p> -->
+              </div>
+              <div class="userDetails">
+                <img src="./assets/call-gry.svg" alt="" />
+                <!-- <p>+1 (786) 903 - 7331</p> -->
+              </div>
+              <div class="userDetails">
+                <img src="./assets/clock.svg" alt="" />
+                <!-- <p>Mon - Fri : 9am - 6pm</p> -->
+              </div>
+            </div>
+            <div class="addTag">
+              <i class="fas fa-solid fa-tag"></i>
+              <p>Add Tag</p>
+            </div>
+            <div class="addTag">
+              <i class="fas fa-solid fa-star"></i>
+              <p>Chat Rating</p>
+            </div>
+            <div class="addTag">
+              <i class="fas fa-solid fa-link"></i>
+              <p>View Pages</p>
+            </div>
+            <div class="addTag">
+              <p>Shared Document</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/listeners.js"></script>
+    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+    <script src="./js/client.js"></script>
+  </body>
+</html>

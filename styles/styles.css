@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200;300;400;500;600;700&display=swap');
+:root{
+    --theme-color:#0874fc;
+    --bg-color:#f2f4f5;
+    --text-color:#002147;
+    --text-grey: #6D7B8D;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Libre Franklin', sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+main{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: var(--bg-color);
+}
+.sideNav{
+    height: 100%;
+    flex-basis: 5%;
+    background: var(--theme-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+.sideNav .topsec,.centersec{
+    height: 1.6rem;
+    width: 1.6rem;
+    cursor: pointer;
+}
+.centersec{
+    margin-top:10rem;
+}
+.centersec img{
+    margin: 1rem 0;
+}
+.topsec img,.centersec img{
+    width: 100%;
+    height: 100%;
+}
+.rightSide{
+    flex-basis: 95%;
+}
+.nav{
+    height: 10%;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.1);
+}
+.logo{
+    height: 2rem;
+    width: 10rem;
+}
+.logo img, .pic>img{
+    width: 100%;
+    height: 100%;
+}
+.right-box{
+    display: flex;
+    align-items: center;
+}
+.search{
+    display: flex;
+    align-items: center;
+}
+.icon img{
+    height: 1.5rem;
+}
+.search p{
+    font-size: 0.9rem;
+    color: #A9A9A9;
+    margin-left: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+.profile p,.searchChats p{
+    margin-left: 1rem;
+}
+.notification{
+    margin: 0 2rem 0 5rem;
+    position: relative;
+}
+.notification::before{
+    content: '';
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    height: 0.5rem;
+    width: 0.5rem;
+    background: var(--theme-color);
+    border-radius: 50%;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color:  #4C5866;
+    font-weight: 500;
+    position: relative;
+}
+.profile .user{
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+}
+.profile .user img{
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+.profile .icon img{
+    height: 0.7rem;
+    width: 0.7rem;
+    margin: 0.4rem 0 0 0.6rem;
+}
+.dropdown{
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    right: 0;
+    width: 10rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    z-index: 6;
+    overflow: hidden;
+}
+.dropdown div{
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--theme-color);
+    padding: 1rem;
+    width: 100%;
+}
+.dropdown i{
+    margin-top: 0.1rem;
+    margin-right: 0.5rem;
+}
+.dropdown div:hover{
+    background: var(--theme-color);
+    color: white;
+}
+.profile:hover .dropdown{
+    display: block;
+}
+.chatSection{
+    display: flex;
+    height: 100%;
+}
+.conversations{
+    height: 100%;
+    flex-basis: 30%;
+    padding: 2% 2.5% 6% 3%;
+    overflow: scroll;
+}
+.conversations::-webkit-scrollbar,.chats::-webkit-scrollbar{
+    display: none;
+}
+.conversations h2{
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+}
+.searchChats{
+    display: flex;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(213, 213, 213);
+    border-radius: 0.3rem;
+    color: rgb(170, 170, 170);
+    margin: 1rem 0 0.5rem 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    align-items: center;
+}
+.recentNew{
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color);
+    font-size: 0.8rem;
+    margin: 0.8rem 0;
+    padding: 0 0.3rem;
+    font-weight: 500;
+}
+.recentNew div{
+    display: flex;
+    align-items: center;
+}
+.recentNew div img{
+    height: 0.5rem;
+    width: 0.5rem;
+    margin-left: 0.3rem;
+    margin-top: 0.2rem;
+}
+.people{
+    display: flex;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 0.3rem;
+    margin: 0.8rem 0;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: 0.1s;
+}
+.people:hover{
+    transform: scale(1.1,1.1);
+}
+.wrap .pic{
+    height: 3.5rem;
+    width: 3.5rem;
+    margin-right: 0.8rem;
+}
+.wrap{
+    display: flex;
+    align-items: center;
+}
+.dots{
+    height: fit-content;
+    width: 3.5rem;
+    padding-top: 0.5rem;
+    font-size: 0.7rem;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-start;
+}
+.dots .single{
+    margin-bottom: 0.2rem;
+}
+.pic>img{
+    border-radius: 50%;
+}
+.time{
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+.time p{
+     color: var(--text-color);
+     font-weight: 500;
+     width: 10rem;
+     /* border: 2px solid red; */
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+}
+.time span,.dots span{
+    color: var(--text-grey);
+    margin-left: 0.5rem;
+}
+.name h3{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.single{
+    height: 0.6rem;
+    width: 0.6rem;
+    background-color: var(--theme-color);
+    border-radius: 50%;
+}
+.people[active="true"]{
+    background-color: var(--theme-color);
+}
+.people[active="true"] .name h3,
+.people[active="true"] .name .time p,
+.people[active="true"] .name .time span{
+    color: white;
+}
+.chatBox{
+    flex-basis: 45%;
+    border-left: 2px solid rgb(225, 225, 225);
+    border-right: 2px solid rgb(225, 225, 225);
+    padding:2%;
+    display: flex;
+    flex-direction: column;
+}
+.chatBox .info{
+    background: white;
+    flex-basis: 10%;
+    width: 100%;
+    border-radius: 0.3rem;
+    padding: 0 1.5rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left,.right{
+    display: flex;
+    align-items: center;
+}
+.left #close{
+    display: none;
+}
+.left .image{
+    margin-right: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.status h3{
+    color: var(--text-color);
+}
+.status span{
+    color: gray;
+    font-size: 0.9rem;
+}
+.video{
+    margin: 0 1.5rem;
+}
+.video img, .call img{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.chats{
+    flex-basis: 70%;
+    overflow: scroll;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
+}
+.rec_wrapper,.sent_wrapper{
+    width: 100%;
+    display: flex;
+    margin: 0.5rem 0;
+    animation: move1 0.15s ease-in-out;
+}
+@keyframes move1{
+    from{
+        opacity: 0.2;
+        transform: translateY(25%);        
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);        
+    }
+}
+.person{
+    align-self: flex-end;
+}
+.person img{
+    height: 50%;
+    width: 2rem;
+    border-radius: 50%;
+}
+.rec_wrapper .person{
+    margin-right: 0.7rem;
+}
+.sent_wrapper .person{
+    margin-left: 0.7rem;
+}
+.rec_wrapper{
+    justify-content: flex-start;
+}
+.sent_wrapper{
+    justify-content: flex-end;
+}
+.rec_msg,.sent_msg{
+    display: flex;
+    border-radius: 0.8rem;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    max-width: 65%;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    line-height: 1.3rem;
+    font-weight: 400;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+.rec_msg{
+    background-color: white;
+    border-bottom-left-radius: 0;
+    color: rgba(0, 33, 71,0.9);
+}
+.sent_msg{
+    background-color: var(--theme-color);
+    color: rgba(255, 255, 255,0.9);
+    border-bottom-right-radius: 0;
+}
+.send{
+    flex-basis: 10%;
+    display: flex;
+    align-items: center;
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+.send .plus,.send .emojis{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: var(--theme-color);
+}
+.plus{
+    flex-basis: 10%;
+    justify-content: center;
+}
+.emojis{
+    flex-basis: 20%;
+    justify-content: space-around;
+}
+.send textarea{
+    border: none;
+    height: 100%;
+    flex-basis: 70%;
+    display: flex;
+    padding-top: 1.7rem;
+    resize: none;
+}
+.send textarea::-webkit-scrollbar{
+    display: none;
+}
+.send textarea:focus{
+    outline: none;
+}
+.emoji{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.plane{
+    background: var(--theme-color);
+    color: white;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.plane img,.emoji img{
+    height: 1.3rem;
+    width: 1.3rem;
+}
+.plane:hover{
+    transform: scale(1.1,1.1);
+}
+
+.userInfo{
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.userInfo .profileImg{
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3rem;
+}
+.profileImg #close2{
+    display: none;
+}
+.profileImg img{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+}
+.profileImg h1{
+    color: var(--text-color);
+    margin: 0.8rem 0 0.4rem 0;
+    font-size: 1.2rem;
+}
+.profileImg p{
+    color: var(--text-grey);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.personalInfo{
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.3rem;
+}
+.personalInfo h3{
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.userDetails{
+    display: flex;
+    align-items: center;
+    margin: 0.8rem 0;
+    color: var(--text-grey);
+    font-size: 0.9em;
+}
+.userDetails p{
+    margin-bottom: 0.05rem;
+}
+.userDetails img{
+    width: 1.5rem;
+    margin:0 0.8rem 0 0.5rem;
+}
+.addTag{
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-grey);
+    margin-top: 1rem;
+}
+.addTag i{
+    margin: 0 1rem 0 0.5rem;
+}
+
+@media(max-width:770px){
+    main{
+        overflow: hidden;
+    }
+    .sideNav,
+    .notification,
+    .profile .icon img,
+    .nav .right-box .search{
+        display: none;
+    }
+    .profile p{
+        margin-left: 0.5rem;
+    }
+    .chatBox .info{
+        padding-left: 0.3rem;
+        padding-right: 1.5rem;
+    }
+    .chatBox .info .left #close{
+        display: block;
+        font-size: 1.3rem;
+        margin-right: 0.8rem;
+        color: var(--theme-color);
+    }
+    .rightSide{
+        flex-basis: 100%;
+        position: relative;
+    }
+    .chatSection{
+        overflow: hidden;
+    }
+    .conversations{
+        flex-basis: 100%;
+        padding-top: 5%;
+        padding-bottom: 20%;
+        z-index: 3;
+        overflow: scroll;
+    }
+    .people:hover{
+        transform: none;
+    }
+    .chatBox{
+        position: absolute;
+        top: 0;
+        left: 110%;
+        height: 100vh;
+        width: 100%;
+        background: var(--bg-color);
+        border-left: none;
+        border-right: none;
+        padding:0;
+        z-index: 5;
+        transition: 0.3s;
+    }
+    .chatBox.active{
+        left: 0;
+        transition: 0.3s;
+    }
+    .info .left{
+        transform: scale(0.9,0.9);
+    }
+    .chats{
+        flex-basis: 80%;
+    }
+    .send{
+        border-radius: 0;
+    }
+    .emojis{
+        flex-basis: 25%;
+    }
+    .send textarea{
+        flex-basis: 65%;
+        padding-top: 1.5rem;
+    }
+    .plane{
+        padding: 0.6rem;
+    }
+    .plane img,.emoji img{
+        height: 1.3rem;
+        width: 1.3rem;
+    }
+    .userInfo{
+        position: absolute;
+        top: 0;
+        left: 110%;
+        height: 100vh;
+        width: 100%;
+        background: var(--bg-color);
+        overflow: scroll;
+        padding: 1rem;
+        z-index: 10;
+        transition: 0.3s;
+    }
+    .profileImg{
+        position: relative;
+    }
+    .profileImg #close2{
+        display: block;
+        position: absolute;
+        top: 8%;
+        left: 5%;
+        font-size: 1.5rem;
+        color: var(--theme-color);
+    }
+    .rec_wrapper .person{
+        margin-right: 0.7rem;
+    }
+    .sent_wrapper .person{
+        margin-left: 0.7rem;
+    }
+    .userInfo.active{
+        left: 0;
+        transition: 0.3s;
+    }
+}
