@@ -449,6 +449,11 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+}
+.plane:disabled{
+    background: var(--text-grey);
+    pointer-events: none;
 }
 .plane img,.emoji img{
     height: 1.3rem;

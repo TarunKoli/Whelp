@@ -94,7 +94,7 @@ function beforeLoad(jwt, userId) {
     .then((parsedData) => {
       if (!parsedData.isLoggedIn) {
         const link = document.createElement("a");
-        link.href = `http://127.0.0.1:5500/Client/sign_in.html`;
+        link.href = `/sign_in.html`;
         link.click();
       } else {
         socket.emit("new-user-joined", parsedData.user);
@@ -104,7 +104,7 @@ function beforeLoad(jwt, userId) {
     })
     .catch((err) => {
       const link = document.createElement("a");
-      link.href = `http://127.0.0.1:5500/Client/sign_in.html`;
+      link.href = `/sign_in.html`;
       link.click();
     });
 }
@@ -130,7 +130,7 @@ function logout() {
       window.localStorage.removeItem("user");
       window.localStorage.removeItem("user_id");
       const link = document.createElement("a");
-      link.href = `http://127.0.0.1:5500/Client/sign_in.html`;
+      link.href = `/sign_in.html`;
       link.click();
     }
   });
@@ -270,10 +270,14 @@ const updateChatBox = (room) => {
         createMsg("rec", msg.text);
       }
     });
+    chatContainer.scrollTop = chatContainer.scrollHeight;
   }
 };
 
 const sendMessage = (msg) => {
+  const send_btn = document.querySelector(".plane");
+  send_btn.disabled = true;
+
   const data = {
     roomId: currentRoom.roomId,
     userId: window.localStorage.getItem("user"),
@@ -300,6 +304,10 @@ const sendMessage = (msg) => {
       createMsg("sent", data.msg.text);
       chatContainer.scrollTop = chatContainer.scrollHeight;
       msgInp.value = "";
+      send_btn.disabled = false;
+    })
+    .catch((err) => {
+      send_btn.disabled = false;
     });
 };
 
