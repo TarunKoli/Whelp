@@ -1,7 +1,8 @@
 // Check for authorization
 function beforeLoad(jwt, userId) {
   fetch("https://whelp-backend.herokuapp.com/api/auth/is-user", {
-    method: "POST", // or 'PUT'
+    method: "POST", // or 'PUT',
+    mode: "cors",
     headers: {
       "Content-Type": "application/json",
     },
@@ -68,6 +69,7 @@ function login(e) {
 
   fetch("https://whelp-backend.herokuapp.com/api/auth/login", {
     method: "POST", // or 'PUT'
+    mode: "cors",
     headers: {
       "Content-Type": "application/json",
     },
