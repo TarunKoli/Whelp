@@ -543,6 +543,9 @@ main{
 }
 
 @media(max-width:770px){
+    body{
+        overflow: scroll;
+    }
     main{
         overflow: hidden;
     }
@@ -599,6 +602,10 @@ main{
         left: 0;
         transition: 0.3s;
     }
+    .info{
+        position: sticky;
+        top: 0;
+    }
     .info .left{
         transform: scale(0.9,0.9);
     }
@@ -606,21 +613,20 @@ main{
         flex-basis: 80%;
     }
     .send{
-        position: absolute;
+        position: sticky;
         bottom: 0;
         left: 0;
         width: 100%;
         background: white;
         border-radius: 0;
         z-index: 6;
-        padding: 0.3rem 0;
     }
     .emojis{
         flex-basis: 25%;
     }
     .send textarea{
         flex-basis: 65%;
-        padding-top: 1rem;
+        /* padding-top: 1rem; */
     }
     .plane{
         padding: 0.6rem;
