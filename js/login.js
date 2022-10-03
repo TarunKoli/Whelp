@@ -16,7 +16,7 @@ function beforeLoad(jwt, userId) {
     .then((ans) => {
       if (ans.isLoggedIn) {
         const link = document.createElement("a");
-        link.href = `/index.html`;
+        link.href = `/Whelp/index.html`;
         link.click();
       }
     })
@@ -88,7 +88,7 @@ function login(e) {
     .then(() => {
       btn.disabled = false;
       const link = document.createElement("a");
-      link.href = `/index.html`;
+      link.href = `/Whelp/index.html`;
       link.click();
     })
     .catch(async (err) => {
