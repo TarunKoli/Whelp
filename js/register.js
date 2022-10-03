@@ -1,6 +1,6 @@
 // Check for authorization
 function beforeLoad(jwt, userId) {
-  fetch("http://localhost:8080/api/auth/is-user", {
+  fetch("https://whelp-backend.herokuapp.com/api/auth/is-user", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -16,7 +16,7 @@ function beforeLoad(jwt, userId) {
     .then((ans) => {
       if (ans.isLoggedIn) {
         const link = document.createElement("a");
-        link.href = `http://127.0.0.1:5500/Client/sign_in.html`;
+        link.href = `./sign_in.html`;
         link.click();
       }
     })
@@ -64,7 +64,7 @@ function register(e) {
   const btn = document.querySelector(".register_btn");
   btn.disabled = true;
 
-  fetch("http://localhost:8080/api/auth/register", {
+  fetch("https://whelp-backend.herokuapp.com/api/auth/register", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -80,7 +80,7 @@ function register(e) {
       if (res.status === 200) {
         btn.disabled = false;
         const link = document.createElement("a");
-        link.href = `http://127.0.0.1:5500/Client/sign_in.html`;
+        link.href = `./sign_in.html`;
         link.click();
       }
       throw res.json();

@@ -1,4 +1,4 @@
-const socket = io("http://localhost:8080");
+const socket = io("https://whelp-backend.herokuapp.com");
 
 const send = document.querySelector(".plane");
 const msgInp = document.querySelector("#msgInp");
@@ -15,7 +15,7 @@ let currentRoom = {
 // API's
 
 function renderConversations() {
-  fetch("http://localhost:8080/api/chat/users")
+  fetch("https://whelp-backend.herokuapp.com/api/chat/users")
     .then((data) => {
       return data.json();
     })
@@ -28,7 +28,7 @@ function renderConversations() {
 }
 
 function findRoom(user, msg, tstmp, dot) {
-  fetch(`http://localhost:8080/api/chat/is-room`, {
+  fetch(`https://whelp-backend.herokuapp.com/api/chat/is-room`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -52,7 +52,7 @@ function findRoom(user, msg, tstmp, dot) {
 }
 
 function createChatBox(user) {
-  fetch(`http://localhost:8080/api/chat/room`, {
+  fetch(`https://whelp-backend.herokuapp.com/api/chat/room`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -78,7 +78,7 @@ function createChatBox(user) {
 
 // Check for authorization
 function beforeLoad(jwt, userId) {
-  fetch("http://localhost:8080/api/auth/is-user", {
+  fetch("https://whelp-backend.herokuapp.com/api/auth/is-user", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -115,7 +115,7 @@ beforeLoad(
 );
 
 function logout() {
-  fetch("http://localhost:8080/api/auth/logout", {
+  fetch("https://whelp-backend.herokuapp.com/api/auth/logout", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -285,7 +285,7 @@ const sendMessage = (msg) => {
       ":" +
       new Date().getMinutes(),
   };
-  fetch("http://localhost:8080/api/chat/message", {
+  fetch("https://whelp-backend.herokuapp.com/api/chat/message", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
