@@ -2,7 +2,8 @@
 function beforeLoad(jwt, userId) {
   fetch("https://whelp-backend.herokuapp.com/api/auth/is-user", {
     method: "POST", // or 'PUT',
-    mode: "no-cors",
+    mode: "cors",
+    credentials: "same-origin",
     headers: {
       "Content-Type": "application/json",
     },
@@ -69,7 +70,8 @@ function login(e) {
 
   fetch("https://whelp-backend.herokuapp.com/api/auth/login", {
     method: "POST", // or 'PUT'
-    mode: "no-cors",
+    mode: "cors",
+    credentials: "same-origin",
     headers: {
       "Content-Type": "application/json",
     },
