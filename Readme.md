@@ -1,6 +1,6 @@
 # **Whelp**
 
-### Whelp is a chatting App made in Javascript(Node.js) using RESTful Web Service, mongoose and socket programming that allows realtime communication between server and client. The app has friendly user interface built using html, css & vanilla JS.
+#### Whelp is a chatting App made in Javascript(Node.js) using RESTful Web Service, mongoose and socket programming that allows realtime communication between server and client. The app has friendly user interface built using html, css & vanilla JS.
 
 ## Features
 
@@ -22,6 +22,12 @@ The client starts by connecting to the server through a socket. Once connection 
 - In order to use Whelp user must register on application.
 - Login to get access to available chats.
 
+<div style="display:flex;">
+<img src="./assets/description/login.png" alt="login_page" width="200" style="margin-right:1rem">
+<img src="./assets/description/register.png" alt="Register_page" width="200">
+</div>
+<img src="./assets/description/login_register.png" alt="login_page" style="margin-top:1rem">
+
 ## Chat Page
 
 - Chat with different users.
@@ -29,3 +35,10 @@ The client starts by connecting to the server through a socket. Once connection 
 - Messages are private between you and other user.
 - No leakage of messages to different rooms.
 - Auto scroll intelligence on current inbox everytime a new message is recieved in that inbox.
+
+<div style="display:flex;">
+<img src="./assets/description/chats_mob.png" alt="chats_page" width="200" style="margin-right:1rem">
+<img src="./assets/description/chats_box_mob.png" alt="chats_page" width="200" style="margin-right:1rem">
+<img src="./assets/description/profile_mob.png" alt="chats_page" width="200">
+</div>
+<img src="./assets/description/Chats.png" alt="chats_page" style="margin-top:1rem">
