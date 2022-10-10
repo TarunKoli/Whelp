@@ -25,7 +25,7 @@ function renderConversations() {
     })
     .then((parsedData) => {
       parsedData.data.forEach((user) => {
-        Users.set(user.email, user);
+        Users.set(user.email, user.email);
         createConversations(user);
       });
     });
@@ -160,7 +160,6 @@ socket.on("recieve", (msg) => {
 
 socket.on("left", (user) => {
   Users.delete(user.email);
-  Users.set(user.email, user);
 });
 
 socket.on("mod-status", ({ id, status }) => {
@@ -267,7 +266,7 @@ const updateChatBox = (room) => {
     currentRoom = room;
 
     document.querySelector(".status h3").textContent =
-      room.reciever.id === logedInUser ? room.sender.name : room.reciever.name;
+      room.reciever._id === logedInUser ? room.sender.name : room.reciever.name;
 
     if (room.reciever.id === logedInUser) {
       stat.style.display = room.reciever.status ? "block" : "none";

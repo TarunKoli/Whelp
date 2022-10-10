@@ -1,9 +1,9 @@
 const peoples = document.querySelectorAll(".people");
-const chatBox = document.querySelector(".chatBox");
+const chat = document.querySelector(".chatBox");
 
 peoples.forEach((p) => {
   p.addEventListener("click", () => {
-    chatBox.classList.toggle("active");
+    chat.classList.toggle("active");
   });
 });
 
@@ -22,7 +22,7 @@ const close2 = document.querySelector("#close2");
 const close1 = document.querySelector("#close");
 
 close1.addEventListener("click", () => {
-  chatBox.classList.toggle("active");
+  chat.classList.toggle("active");
   location.reload();
 });
 
