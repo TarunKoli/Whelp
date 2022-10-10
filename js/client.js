@@ -265,6 +265,8 @@ const updateChatBox = (room) => {
     chatContainer.innerHTML = "";
     currentRoom = room;
 
+    console.log(room);
+
     document.querySelector(".status h3").textContent =
       room.reciever._id === logedInUser ? room.sender.name : room.reciever.name;
 
@@ -286,6 +288,7 @@ const updateChatBox = (room) => {
 };
 
 const sendMessage = (msg) => {
+  if (!msg || !msg.trim().length) return;
   const send_btn = document.querySelector(".plane");
   send_btn.disabled = true;
 
