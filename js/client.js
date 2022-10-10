@@ -255,7 +255,7 @@ const createConversations = (user) => {
   });
 
   divi.addEventListener("click", () => {
-    createChatBox(user);
+    createUI(user);
   });
 };
 
@@ -329,21 +329,16 @@ function createUI(user) {
   let username = document.querySelector(".profile p");
   username.textContent = user.name;
   createChatBox(user);
-  let userInfo = document.querySelector(".profileImg");
-  const name = document.createElement("h1");
+
+  const name = document.querySelector(".profileImg h1");
   name.textContent = user.name;
-  const type = document.createElement("p");
+  const type = document.querySelector(".profileImg p");
   type.textContent = "User";
-  userInfo.appendChild(name);
-  userInfo.appendChild(type);
-  let userDetails = document.querySelectorAll(".userDetails");
-  let email = document.createElement("p");
-  email.textContent = user.email;
-  let mobile = document.createElement("p");
-  mobile.textContent = "+91" + user.phone;
-  let time = document.createElement("p");
-  time.textContent = new Date().toDateString();
-  userDetails[0].appendChild(email);
-  userDetails[1].appendChild(mobile);
-  userDetails[2].appendChild(time);
+
+  let userDetails = document.querySelectorAll(".userDetails p");
+  let time = new Date().toDateString();
+
+  userDetails[0].textContent = user.email;
+  userDetails[1].textContent = user.phone;
+  userDetails[2].textContent = time;
 }
