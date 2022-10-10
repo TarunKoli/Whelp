@@ -108,6 +108,7 @@ function beforeLoad(jwt, userId) {
         link.click();
       } else {
         socket.emit("new-user-joined", parsedData.user);
+        setNav(parsedData.user);
         createUI(parsedData.user);
         renderConversations();
       }
@@ -326,8 +327,6 @@ const sendMessage = (msg) => {
 };
 
 function createUI(user) {
-  let username = document.querySelector(".profile p");
-  username.textContent = user.name;
   createChatBox(user);
 
   const name = document.querySelector(".profileImg h1");
@@ -341,4 +340,9 @@ function createUI(user) {
   userDetails[0].textContent = user.email;
   userDetails[1].textContent = user.phone;
   userDetails[2].textContent = time;
+}
+
+function setNav(user) {
+  let username = document.querySelector(".profile p");
+  username.textContent = user.name;
 }
