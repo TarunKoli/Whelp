@@ -265,8 +265,6 @@ const updateChatBox = (room) => {
     chatContainer.innerHTML = "";
     currentRoom = room;
 
-    console.log(room);
-
     document.querySelector(".status h3").textContent =
       room.reciever._id === logedInUser ? room.sender.name : room.reciever.name;
 
