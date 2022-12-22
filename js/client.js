@@ -1,4 +1,4 @@
-const socket = io("https://whelp-backend.herokuapp.com");
+const socket = io("https://whelp-backend.vercel.app");
 
 const send = document.querySelector(".plane");
 const msgInp = document.querySelector("#msgInp");
@@ -15,7 +15,7 @@ let currentRoom = {
 // API's
 
 function renderConversations() {
-  fetch("https://whelp-backend.herokuapp.com/api/chat/users", {
+  fetch("https://whelp-backend.vercel.app/api/chat/users", {
     method: "GET",
     mode: "cors",
     credentials: "same-origin",
@@ -32,7 +32,7 @@ function renderConversations() {
 }
 
 function findRoom(user, msg, tstmp, dot) {
-  fetch(`https://whelp-backend.herokuapp.com/api/chat/is-room`, {
+  fetch(`https://whelp-backend.vercel.app/api/chat/is-room`, {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",
@@ -58,7 +58,7 @@ function findRoom(user, msg, tstmp, dot) {
 }
 
 function createChatBox(user) {
-  fetch(`https://whelp-backend.herokuapp.com/api/chat/room`, {
+  fetch(`https://whelp-backend.vercel.app/api/chat/room`, {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",
@@ -86,7 +86,7 @@ function createChatBox(user) {
 
 // Check for authorization
 function beforeLoad(jwt, userId) {
-  fetch("https://whelp-backend.herokuapp.com/api/auth/is-user", {
+  fetch("https://whelp-backend.vercel.app/api/auth/is-user", {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",
@@ -126,7 +126,7 @@ beforeLoad(
 );
 
 function logout() {
-  fetch("https://whelp-backend.herokuapp.com/api/auth/logout", {
+  fetch("https://whelp-backend.vercel.app/api/auth/logout", {
     method: "POST", // or 'PUT'
     mode: "cors",
     credentials: "same-origin",
@@ -302,7 +302,7 @@ const sendMessage = (msg) => {
       ":" +
       new Date().getMinutes(),
   };
-  fetch("https://whelp-backend.herokuapp.com/api/chat/message", {
+  fetch("https://whelp-backend.vercel.app/api/chat/message", {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",

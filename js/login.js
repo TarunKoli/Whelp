@@ -1,6 +1,6 @@
 // Check for authorization
 function beforeLoad(jwt, userId) {
-  fetch("https://whelp-backend.herokuapp.com/api/auth/is-user", {
+  fetch("https://whelp-backend.vercel.app/api/auth/is-user", {
     method: "POST", // or 'PUT',
     mode: "cors",
     credentials: "same-origin",
@@ -68,7 +68,7 @@ function login(e) {
   const btn = document.querySelector(".login_btn");
   btn.disabled = true;
 
-  fetch("https://whelp-backend.herokuapp.com/api/auth/login", {
+  fetch("https://whelp-backend.vercel.app/api/auth/login", {
     method: "POST", // or 'PUT'
     mode: "cors",
     credentials: "same-origin",
