@@ -1,4 +1,4 @@
-const socket = io("https://whelp-backend.vercel.app");
+const socket = io("http://localhost:8080");
 
 const send = document.querySelector(".plane");
 const msgInp = document.querySelector("#msgInp");
@@ -15,7 +15,7 @@ let currentRoom = {
 // API's
 
 function renderConversations() {
-  fetch("https://whelp-backend.vercel.app/api/chat/users", {
+  fetch("http://localhost:8080/api/chat/users", {
     method: "GET",
     mode: "cors",
     credentials: "same-origin",
@@ -32,7 +32,7 @@ function renderConversations() {
 }
 
 function findRoom(user, msg, tstmp, dot) {
-  fetch(`https://whelp-backend.vercel.app/api/chat/is-room`, {
+  fetch(`http://localhost:8080/api/chat/is-room`, {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",
@@ -58,7 +58,7 @@ function findRoom(user, msg, tstmp, dot) {
 }
 
 function createChatBox(user) {
-  fetch(`https://whelp-backend.vercel.app/api/chat/room`, {
+  fetch(`http://localhost:8080/api/chat/room`, {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",
@@ -86,7 +86,7 @@ function createChatBox(user) {
 
 // Check for authorization
 function beforeLoad(jwt, userId) {
-  fetch("https://whelp-backend.vercel.app/api/auth/is-user", {
+  fetch("http://localhost:8080/api/auth/is-user", {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",
@@ -104,7 +104,7 @@ function beforeLoad(jwt, userId) {
     .then((parsedData) => {
       if (!parsedData.isLoggedIn) {
         const link = document.createElement("a");
-        link.href = `/Whelp/sign_in.html`;
+        link.href = `/Client/sign_in.html`;
         link.click();
       } else {
         socket.emit("new-user-joined", parsedData.user);
@@ -115,7 +115,7 @@ function beforeLoad(jwt, userId) {
     })
     .catch((err) => {
       const link = document.createElement("a");
-      link.href = `/Whelp/sign_in.html`;
+      link.href = `/Client/sign_in.html`;
       link.click();
     });
 }
@@ -126,7 +126,7 @@ beforeLoad(
 );
 
 function logout() {
-  fetch("https://whelp-backend.vercel.app/api/auth/logout", {
+  fetch("http://localhost:8080/api/auth/logout", {
     method: "POST", // or 'PUT'
     mode: "cors",
     credentials: "same-origin",
@@ -143,7 +143,7 @@ function logout() {
       window.localStorage.removeItem("user");
       window.localStorage.removeItem("user_id");
       const link = document.createElement("a");
-      link.href = `/Whelp/sign_in.html`;
+      link.href = `/Client/sign_in.html`;
       link.click();
     }
   });
@@ -302,7 +302,7 @@ const sendMessage = (msg) => {
       ":" +
       new Date().getMinutes(),
   };
-  fetch("https://whelp-backend.vercel.app/api/chat/message", {
+  fetch("http://localhost:8080/api/chat/message", {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",

@@ -1,6 +1,6 @@
 // Check for authorization
 function beforeLoad(jwt, userId) {
-  fetch("https://whelp-backend.vercel.app/api/auth/is-user", {
+  fetch("http://localhost:8080/api/auth/is-user", {
     method: "POST", // or 'PUT'
     mode: "cors",
     credentials: "same-origin",
@@ -18,7 +18,7 @@ function beforeLoad(jwt, userId) {
     .then((ans) => {
       if (ans.isLoggedIn) {
         const link = document.createElement("a");
-        link.href = `/Whelp/index.html`;
+        link.href = `/Client/index.html`;
         link.click();
       }
     })
@@ -66,7 +66,7 @@ function register(e) {
   const btn = document.querySelector(".register_btn");
   btn.disabled = true;
 
-  fetch("https://whelp-backend.vercel.app/api/auth/register", {
+  fetch("http://localhost:8080/api/auth/register", {
     method: "POST", // or 'PUT'
     mode: "cors",
     credentials: "same-origin",
@@ -84,7 +84,7 @@ function register(e) {
       if (res.status === 200) {
         btn.disabled = false;
         const link = document.createElement("a");
-        link.href = `/Whelp/sign_in.html`;
+        link.href = `/Client/sign_in.html`;
         link.click();
       }
       throw res.json();
