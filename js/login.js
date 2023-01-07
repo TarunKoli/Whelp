@@ -1,6 +1,6 @@
 // Check for authorization
 function beforeLoad(jwt, userId) {
-  fetch("http://localhost:8080/api/auth/is-user", {
+  fetch("https://whelp-backend.onrender.com/api/auth/is-user", {
     method: "POST", // or 'PUT',
     mode: "cors",
     credentials: "same-origin",
@@ -68,7 +68,7 @@ function login(e) {
   const btn = document.querySelector(".login_btn");
   btn.disabled = true;
 
-  fetch("http://localhost:8080/api/auth/login", {
+  fetch("https://whelp-backend.onrender.com/api/auth/login", {
     method: "POST", // or 'PUT'
     mode: "cors",
     credentials: "same-origin",

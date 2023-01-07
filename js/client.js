@@ -1,4 +1,4 @@
-const socket = io("http://localhost:8080");
+const socket = io("https://whelp-backend.onrender.com");
 
 const send = document.querySelector(".plane");
 const msgInp = document.querySelector("#msgInp");
@@ -15,7 +15,7 @@ let currentRoom = {
 // API's
 
 function renderConversations() {
-  fetch("http://localhost:8080/api/chat/users", {
+  fetch("https://whelp-backend.onrender.com/api/chat/users", {
     method: "GET",
     mode: "cors",
     credentials: "same-origin",
@@ -32,7 +32,7 @@ function renderConversations() {
 }
 
 function findRoom(user, msg, tstmp, dot) {
-  fetch(`http://localhost:8080/api/chat/is-room`, {
+  fetch(`https://whelp-backend.onrender.com/api/chat/is-room`, {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",
@@ -58,7 +58,7 @@ function findRoom(user, msg, tstmp, dot) {
 }
 
 function createChatBox(user) {
-  fetch(`http://localhost:8080/api/chat/room`, {
+  fetch(`https://whelp-backend.onrender.com/api/chat/room`, {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",
@@ -86,7 +86,7 @@ function createChatBox(user) {
 
 // Check for authorization
 function beforeLoad(jwt, userId) {
-  fetch("http://localhost:8080/api/auth/is-user", {
+  fetch("https://whelp-backend.onrender.com/api/auth/is-user", {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",
@@ -126,7 +126,7 @@ beforeLoad(
 );
 
 function logout() {
-  fetch("http://localhost:8080/api/auth/logout", {
+  fetch("https://whelp-backend.onrender.com/api/auth/logout", {
     method: "POST", // or 'PUT'
     mode: "cors",
     credentials: "same-origin",
@@ -302,7 +302,7 @@ const sendMessage = (msg) => {
       ":" +
       new Date().getMinutes(),
   };
-  fetch("http://localhost:8080/api/chat/message", {
+  fetch("https://whelp-backend.onrender.com/api/chat/message", {
     method: "POST",
     mode: "cors",
     credentials: "same-origin",
