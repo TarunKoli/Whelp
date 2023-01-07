@@ -104,7 +104,7 @@ function beforeLoad(jwt, userId) {
     .then((parsedData) => {
       if (!parsedData.isLoggedIn) {
         const link = document.createElement("a");
-        link.href = `/Client/sign_in.html`;
+        link.href = `/Whelp/sign_in.html`;
         link.click();
       } else {
         socket.emit("new-user-joined", parsedData.user);
@@ -115,7 +115,7 @@ function beforeLoad(jwt, userId) {
     })
     .catch((err) => {
       const link = document.createElement("a");
-      link.href = `/Client/sign_in.html`;
+      link.href = `/Whelp/sign_in.html`;
       link.click();
     });
 }
@@ -143,7 +143,7 @@ function logout() {
       window.localStorage.removeItem("user");
       window.localStorage.removeItem("user_id");
       const link = document.createElement("a");
-      link.href = `/Client/sign_in.html`;
+      link.href = `/Whelp/sign_in.html`;
       link.click();
     }
   });
